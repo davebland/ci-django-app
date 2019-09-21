@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'django_tutorial.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default' : os.environ.get('DATABASE_URL')}
+DATABASES = {'default' : {os.environ.get('DATABASE_URL')}}
 
 
 # Password validation
