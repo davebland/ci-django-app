@@ -26,8 +26,8 @@ SECRET_KEY = '1#48mb5*t#-05701u_@l!g60!b!$@!a=dcvwe^qq0usg-o#g8x'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['522dbd46e22c4c819dd4798ba741081e.vfs.cloud9.eu-west-1.amazonaws.com', 'tutorial-django-app.herokuapp.com']
-
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                os.environ.get('HOSTNAME')]
 
 # Application definition
 
@@ -82,7 +82,7 @@ WSGI_APPLICATION = 'django_tutorial.wsgi.application'
 #     }
 # }
 
-DATABASES = {'default' : dj_database_url.parse("postgres://ojbiqqvfeinoqf:5f854ff7d56503fd92924ddfaa9f4f78caff79f224e3d863305300298e7f4044@ec2-79-125-4-72.eu-west-1.compute.amazonaws.com:5432/daspved93oi62f") }
+DATABASES = {'default' : os.environ.get('DATABASE_URL')}
 
 
 # Password validation
